@@ -1,7 +1,15 @@
 {
   "name": "purrweb-react-trello",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "GitHub",
+    "url": "https://github.com/khodorkovskyalexey/purrweb-react-trello.git"
+  },
+  "author": {
+    "name": "Khodorkovsky Alexey",
+    "url": "https://github.com/khodorkovskyalexey"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
