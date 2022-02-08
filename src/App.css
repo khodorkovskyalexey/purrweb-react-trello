@@ -5,3 +5,9 @@
 p {
     font-size: 1.25rem;
 }
+
+header {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+}
