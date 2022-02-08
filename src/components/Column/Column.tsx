@@ -1,5 +1,5 @@
 import React from 'react';
-import './Column.css';
+import './column.css';
 
 export interface ColumnProps {
     name: string;
