@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Column from './components/Column/Column';
-import { columns } from './api'
+import { ColumnsArray } from './api'
+import { Column } from './components/Column';
+import { Modal } from './components/Modal';
+
 
 const App = () => {
+  const [user, setUser] = useState('');
+  const [columns, setColumns] = useState(ColumnsArray);
+  const [modalActive, setModalActive] = useState(true);
+
   return (
-    <div>
+    <div className='app'>
       <div className='row'>
         {columns.map(column => {
           return (
@@ -17,6 +23,7 @@ const App = () => {
           );
         })}
       </div>
+        <Modal active={modalActive} setActive={setModalActive}/>
     </div>
   );
 };

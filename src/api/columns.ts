@@ -3,7 +3,7 @@ export interface ColumnModel {
     name: string;
 }
 
-export const columns: ColumnModel[] = [
+export const ColumnsArray: ColumnModel[] = [
     { id: 0, name: 'TODO' },
     { id: 1, name: 'In Progress' },
     { id: 2, name: 'Testing' },

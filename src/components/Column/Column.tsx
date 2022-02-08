@@ -5,7 +5,7 @@ export interface ColumnProps {
     name: string;
 }
 
-const Column: React.FC<ColumnProps> = ({ name, children }) => {
+export const Column: React.FC<ColumnProps> = ({ name, children }) => {
     return (
         <div className='column'>
             <div className='column-name'>{name}</div>
@@ -13,5 +13,3 @@ const Column: React.FC<ColumnProps> = ({ name, children }) => {
         </div>
     );
 };
-
-export default Column;

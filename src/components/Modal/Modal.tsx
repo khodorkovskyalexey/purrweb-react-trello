@@ -6,7 +6,7 @@ export interface ModalProps {
     setActive: (active: boolean) => void,
 }
 
-const Modal: React.FC<ModalProps> = ({ active, setActive }) => {
+export const Modal: React.FC<ModalProps> = ({ active, setActive }) => {
     return (
         <div className={active ? 'modal_view active' : 'modal_view'} onClick={() => setActive(false)}>
             <div className={active ? 'modal_view_content active' : 'modal_view_content'} onClick={e => e.stopPropagation()}>
@@ -15,5 +15,3 @@ const Modal: React.FC<ModalProps> = ({ active, setActive }) => {
         </div>
     );
 };
-
-export default Modal;
