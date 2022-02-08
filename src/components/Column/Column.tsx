@@ -23,14 +23,17 @@ export const Column: React.FC<ColumnProps> = ({
         <div className='column'>
             <div className='column-name'>
                 {name}
-                <input type="button" value="Rename" onClick={() => {
-                    setRenameModalActive(true);
-                    setRenamedColumn(id);
-                } }/>
-                <input type="button" value="Add card" onClick={() => {
-                    setAddingCardModalActive(true);
-                    setAddingCardColumn(id);
-                } }/>
+                <br />
+                <div className="column-btn">
+                    <input type="button" value="Rename" onClick={() => {
+                        setRenameModalActive(true);
+                        setRenamedColumn(id);
+                    } }/>
+                    <input type="button" value="Add card" onClick={() => {
+                        setAddingCardModalActive(true);
+                        setAddingCardColumn(id);
+                    } }/>
+                </div>
             </div>
             {children}
         </div>
