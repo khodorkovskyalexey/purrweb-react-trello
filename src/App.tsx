@@ -16,6 +16,8 @@ const App = () => {
   const [openCard, setOpenCard] = useState({} as CardModel);
   const [renamedColumn, setRenamedColumn] = useState({} as ColumnModel);
   const [renameModalActive, setRenameModalActive] = useState(false);
+  const [addingCardModal, setAddingCardModal] = useState(false);
+  const [addingCard, setAddingCard] = useState({} as CardModel);
 
   function openCardModel(cardId: number) {
     setCardModalActive(true);
@@ -35,6 +37,10 @@ const App = () => {
     }));
   }
 
+  function setAddingCardColumn(id: number) {
+    setAddingCard({ ...addingCard, columnId: id });
+  }
+
   return (
     <div className='app'>
       <header>
@@ -51,6 +57,8 @@ const App = () => {
                 key={column.id} 
                 setRenameModalActive={setRenameModalActive} 
                 setRenamedColumn={setRenamedColumnById}
+                setAddingCardModalActive={setAddingCardModal}
+                setAddingCardColumn={setAddingCardColumn}
               >
                 <CardsList 
                   cards={cards.filter(card => card.columnId === column.id)}
@@ -85,6 +93,24 @@ const App = () => {
             <label>
                 Имя:
                 <input type="text" value={renamedColumn.name} onChange={event => setColumnName(renamedColumn.id, event.target.value)} />
+            </label>
+            <input type="submit" value="Отправить" />
+        </form>
+      </Modal>
+      <Modal active={addingCardModal} setActive={setAddingCardModal}>
+        <form onSubmit={ event => {
+            setCards([...cards, { ...addingCard, id: cards.length , author: user }]);
+            setAddingCard({} as CardModel);
+            setAddingCardModal(false);
+            event.preventDefault();
+        } }>
+            <label>
+                Title:
+                <input type="text" value={addingCard.title} onChange={event => setAddingCard({ ...addingCard, title: event.target.value })} />
+            </label>
+            <label>
+                Description:
+                <input type="text" value={addingCard.description} onChange={event => setAddingCard({ ...addingCard, description: event.target.value })} />
             </label>
             <input type="submit" value="Отправить" />
         </form>
