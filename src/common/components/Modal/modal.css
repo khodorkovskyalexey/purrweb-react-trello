@@ -19,6 +19,7 @@
 }
 
 .modal_view_content {
+    float: left;
     padding: 20px;
     border-radius: 12px;
     background-color: white;
