@@ -1,5 +1,6 @@
-export interface ColumnModel {
-    id: number;
+import { IdExistsInterface } from "../common/interfaces";
+
+export interface ColumnModel extends IdExistsInterface {
     name: string;
 }
 
